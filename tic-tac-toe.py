@@ -566,18 +566,20 @@ if (__name__ == "__main__"):
     for i in range(len(states)):
         state_index[states[i]] = i
     
-    #start = time.time()
-    #values = value_iteration(states)
-    #total = time.time() - start
-    #print(total)
-    #policy = get_policy_from_values(states, values)
+    start = time.time()
+    values = value_iteration(states)
+    total = time.time() - start
+    print(total)
+    policy = get_policy_from_values(states, values)
     
-    #start = time.time()
-    #policy = policy_iteration(states)
-    #total = time.time() - start
-    #print(total)
+    play_policy(policy)
+    
+    start = time.time()
+    policy = policy_iteration(states)
+    total = time.time() - start
+    print(total)
 
-    #play_policy(policy)
+    play_policy(policy)
 
     q_table = q_learning(states)
 
